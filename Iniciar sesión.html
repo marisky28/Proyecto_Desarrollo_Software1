@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Control de Acceso</title>
+</head>
+
+<body bgcolor="#170E0E">
+	<p align="center"><br><br><br><br>
+		<font color="white" size="+3" face="consolas"><b><br><br>Iniciar sesión</b></font>
+		<br></p>
+<script type="text/JavaScript">
+	
+	function ingresar(){
+	
+	var correo="danymariscalg@gmail.com";
+	var contraseña=1234;
+	
+
+	if(document.form.correo.value==correo &&document.form.password.value==contraseña)
+	{
+	window.location="pagina1.html";
+	}
+	else{
+		alert("El correo electrónico o la contraseña son incorrectos.");
+	}
+}
+
+</script>
+<form name=form action="Inicio de sesion">
+
+	<p align="center"><input type="email" size="40" placeholder="Correo electrónico" name="correo"> </p>
+	<p align="center"><input type="password" size="40" placeholder="Contraseña" name="password"> </p>
+	<p align="center"><input onClick="ingresar()" type="button" value="Ingresar"></p>
+
+</form>
+<p align="center"><a href="file:///C:/Users/danym/OneDrive/Documentos/Inicio%20de%20sesi%C3%B3n/Crea%20una%20cuenta.html"><font size="+1" color="white">Crear una cuenta</font></a></p>
+
+	
+</body>
+</html>

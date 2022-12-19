@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Control de Acceso</title>
+</head>
+
+<body bgcolor="#170E0E" margin="5em">
+	<p align="center"><br>
+		
+<script type="text/JavaScript">
+	
+	function ingresar(){
+	
+	var nombre;
+	var apellidos;
+	var numero;
+	var year;
+	var mes;
+
+	if(document.form.nombre.value==0||document.form.apellidos.value==0)
+	{
+		alert("Debe ingresar su nombre");
+		return false;
+	}
+	if(document.form.numero.value<999999999999999)
+	{
+		alert("No es un numero de tarjeta válido, debe tener 16 cifras");
+		return false;
+	}
+	if(document.form.numero.value>9999999999999999)
+	{
+		alert("No es un numero de tarjeta válido, debe tener 16 cifras");
+		return false;
+	}
+	if(document.form.year.value<22)
+	{
+		alert("No es un año de vencimiento válido, usa solo las últimas dos cifras");
+		return false;
+	}
+	if(document.form.year.value>99)
+	{
+		alert("No es un año de vencimiento válido, usa solo las últimas dos cifras");
+		return false;
+	}
+	if(document.form.mes.value>12||document.form.mes.value<1)
+	{
+		alert("No es un mes válido, debe ser un número real menor que 12");
+		return false;
+	}
+	if(document.form.cvv.value>999||document.form.cvv.value<1)
+	{
+		alert("No es un número de seguridad válido, debe contener 3 cifras (si pone menos de 3, se considerará que hay un 0 a la izquierda)");
+		return false;
+	}
+	else{
+		window.location="pagina1.html";
+	}
+}
+
+</script>
+	
+<table cellpadding="15">
+	<tr><td>
+		
+	</td>
+		<td>
+
+		<p align="left"> <font color="white" size="+3" face="consolas"><strong>Inserte los datos de<br>su tarjeta de crédito:</strong></font> </p>
+	<font color="white" face="consolas "><br>Nombre del titular de la tarjeta:<br></font>
+
+			<form name=form action="Inicio de sesion">
+
+	<p align="left"><input type="text" size="40" placeholder="Nombre(s)" name="nombre"> </p>
+	<p align="left"><input type="text" size="40" placeholder="Apellido(s)" name="apellidos"> </p>
+	<p align="left"><font color="white" face="consolas ">16 dígitos (sin guiones):   </font><input type="num" max="16" size="15" placeholder="Numero de tarjeta" name="numero"> </p>
+	<p align="let"><font color="white" face="consolas ">Fecha de expiración:   </font><input type="text" size="3" placeholder="Año" name="year">   <input type="text" size="3" placeholder="Mes" name="mes"> </p>
+	<p align="left"><font color="white" face="consolas ">Número de seguridad:   </font><input type="text" size="3" placeholder="CVV" name="cvv"> </p>
+	<font color="white" face="consolas" size="-2">Nota: si ingresas un número que no cumple con el número de cifras<br>requerido, se asumirá que tiene ceros a la izquierda.</font>
+	<p align="left"><input onClick="ingresar()" type="button" value="Ingresar"></p>
+
+</form>
+		</td>
+	</tr>
+</table>
+
+	
+</body>
+</html>

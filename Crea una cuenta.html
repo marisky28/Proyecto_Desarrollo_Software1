@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Crear cuenta</title>
+</head>
+	
+<body bgcolor="#170E0E">
+<style type="text/css"></style>
+	<p align="center"><br>
+<br>
+		<font color="white" size="+3" face="consolas"><br><br><br><b>Crea una cuenta</b></font>
+		<br></p>
+
+<script type="text/Javascript">
+	function validar(){
+		var form = document.form;
+
+			if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.correo.value)){
+				alert("No ingresó una dirección de correo electrónico válida");
+				form.correo.value="";
+				form.correo.focus();
+				return false;
+			}
+			if (form.password1.value==0){
+				alert("No ingresó una contraseña");
+				form.password1.value="";
+				form.password1.focus();
+				return false;
+			}
+			if (form.password2.value!=form.password1.value){
+				alert("Necesita confirmar la contraseña. Verifique que esta sea correcta.");
+				form.correo.focus();
+				return false;
+			}
+			else{
+				window.location="pagina.html";
+			}
+	}
+
+</script>
+<form action="#" name="form">
+
+	<p align="center"><input type="email" size="40" placeholder="Inserta tu correo electrónico" id="correo"><br></p>
+
+	<p align="center"><input type="password" size="40" placeholder="Crea una contraseña" id="password1"><br></p>
+
+	<p align="center"><input type="password" size="40" placeholder="Confirma la contraseña" id="password2"><br></p>
+
+	<p align="center"><input onClick="validar()" type="button" value="Ingresar"></p>
+
+</form>
+	
+	<div id='error'></div>
+	<p align="center">
+	
+	<a href="file:///C:/Users/danym/OneDrive/Documentos/Inicio%20de%20sesi%C3%B3n/Iniciar%20sesi%C3%B3n.html"><font size="+1" color="white">¿Ya tienes una cuenta?</font></a>
+	
+	</p>
+</body>
+</html>
